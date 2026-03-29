@@ -848,13 +848,18 @@ footer .footer-links a:hover { color: var(--sage-light); }
 
 /* ── ANIMATIONS ── */
 .fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeUpIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
+
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ── RESPONSIVE ── */
@@ -1195,7 +1200,7 @@ footer .footer-links a:hover { color: var(--sage-light); }
 <section class="cta-section" id="contact">
   <h2>Ready to Help Your Child <em>Thrive</em>?</h2>
   <p>Let Munishi Didi guide your child's journey. Book a free discovery call — Saturday sessions filling up fast.</p>
-  <a href="/cdn-cgi/l/email-protection#701d111e1515031830030015151318041815021100095e131f1d" class="btn-cta">
+  <a href="/cdn-cgi/l/email-protection#e98488878c8c9a81a99a998c8c8a819d818c9b889990c78a8684" class="btn-cta">
     <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
     Get in Touch
   </a>
