@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maneesha Munish — Speech & Language Therapy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FDF6EE;
+  --warm-white: #FFFBF5;
+  --sage: #7A9E7E;
+  --sage-light: #A8C5AB;
+  --sage-dark: #5B7F5E;
+  --terracotta: #C4704B;
+  --terracotta-light: #E8A882;
+  --navy: #2C3E50;
+  --soft-brown: #8B7355;
+  --peach: #F5D5C0;
+  --lavender: #E8DFF0;
+  --sky: #D4E8F0;
+  --text: #3A3A3A;
+  --text-light: #6B6B6B;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  background: var(--cream);
+  overflow-x: hidden;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--peach) 40%, var(--lavender) 70%, var(--sky) 100%);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 15% 80%, rgba(122,158,126,0.15) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 85% 20%, rgba(196,112,75,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* floating shapes */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.12;
+  animation: floatShape 8s ease-in-out infinite;
+}
+.shape-1 { width: 320px; height: 320px; background: var(--sage); top: -60px; right: -80px; animation-delay: 0s; }
+.shape-2 { width: 200px; height: 200px; background: var(--terracotta); bottom: 10%; left: -50px; animation-delay: 2s; }
+.shape-3 { width: 150px; height: 150px; background: var(--lavender); top: 30%; right: 20%; animation-delay: 4s; opacity: 0.2; }
+.shape-4 { width: 100px; height: 100px; background: var(--peach); bottom: 25%; right: 35%; animation-delay: 1s; opacity: 0.25; }
+
+@keyframes floatShape {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.2rem 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(20px);
+  background: rgba(253,246,238,0.7);
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: 0 2px 30px rgba(0,0,0,0.06); }
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--sage-dark);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.logo span { color: var(--terracotta); }
+
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--sage);
+  transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--sage-dark); }
+.nav-links a:hover::after { width: 100%; }
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.8rem;
+  background: var(--sage);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(122,158,126,0.3);
+}
+.btn-primary:hover {
+  background: var(--sage-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(122,158,126,0.4);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.8rem;
+  background: transparent;
+  color: var(--sage-dark);
+  border: 2px solid var(--sage);
+  border-radius: 50px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.btn-secondary:hover {
+  background: var(--sage);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.hero-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 8rem 4% 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.didi-badge {
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--terracotta);
+  background: linear-gradient(135deg, rgba(196,112,75,0.1), rgba(245,213,192,0.4));
+  padding: 0.5rem 1.3rem;
+  border-radius: 50px;
+  margin-bottom: 1.2rem;
+  border: 1px solid rgba(196,112,75,0.2);
+  letter-spacing: 0.02em;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.15;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+.hero-text h1 em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+.hero-text .subtitle {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  max-width: 500px;
+  font-weight: 300;
+}
+
+.hero-text .cta-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.trust-badges {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+.trust-badge svg { flex-shrink: 0; }
+
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-card {
+  width: 420px;
+  height: 500px;
+  border-radius: 30px;
+  background: url('maneesh.jpg') center top / cover no-repeat;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+.hero-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,62,80,0.7) 0%, rgba(44,62,80,0.15) 50%, transparent 100%);
+  z-index: 1;
+}
+
+.hero-card-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  z-index: 0;
+  opacity: 0.15;
+}
+
+.hero-card-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+.hero-card-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+.hero-card-content p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  font-weight: 300;
+}
+
+.floating-badge {
+  position: absolute;
+  background: white;
+  border-radius: 16px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  z-index: 3;
+  animation: floatBadge 4s ease-in-out infinite;
+}
+.floating-badge-1 {
+  top: 20px;
+  right: -30px;
+  animation-delay: 0s;
+}
+.floating-badge-2 {
+  bottom: 60px;
+  left: -40px;
+  animation-delay: 1.5s;
+}
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.badge-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+.badge-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--sage-dark);
+}
+.badge-value.terracotta { color: var(--terracotta); }
+
+/* ── SECTION STYLES ── */
+section { padding: 6rem 4%; }
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--terracotta);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.section-label::before {
+  content: '';
+  width: 30px;
+  height: 2px;
+  background: var(--terracotta);
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  color: var(--navy);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  max-width: 600px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ── ABOUT ── */
+.about { background: var(--warm-white); }
+.about-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+}
+.about-image-main {
+  width: 100%;
+  height: 450px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--peach), var(--terracotta-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.about-image-accent {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 180px;
+  height: 180px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+.accent-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--sage-dark);
+  line-height: 1;
+}
+.accent-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+  font-weight: 600;
+  text-align: center;
+}
+
+.about-text .highlight-list {
+  list-style: none;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.highlight-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.highlight-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(122,158,126,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── SERVICES ── */
+.services { background: var(--cream); }
+.services-header {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+.services-header .section-subtitle { margin: 0 auto; }
+
+.services-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.service-card {
+  background: white;
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0,0,0,0.04);
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--sage);
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.service-icon.sage { background: rgba(122,158,126,0.12); }
+.service-icon.terra { background: rgba(196,112,75,0.12); }
+.service-icon.lav { background: rgba(232,223,240,0.5); }
+
+.service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: var(--navy);
+}
+.service-card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-light);
+  font-weight: 300;
+}
+.service-tags {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.service-tag {
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.service-tag.sage { background: rgba(122,158,126,0.1); color: var(--sage-dark); }
+.service-tag.terra { background: rgba(196,112,75,0.1); color: var(--terracotta); }
+.service-tag.lav { background: rgba(232,223,240,0.5); color: #7B68A8; }
+
+/* ── PATH TO SUCCESS ── */
+.path { background: var(--navy); color: white; position: relative; overflow: hidden; }
+.path::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(122,158,126,0.15), transparent 50%),
+              radial-gradient(circle at 20% 80%, rgba(196,112,75,0.1), transparent 50%);
+}
+.path-header {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  text-align: center;
+  position: relative;
+}
+.path-header .section-label { color: var(--sage-light); }
+.path-header .section-label::before { background: var(--sage-light); }
+.path-header .section-title { color: white; }
+.path-header .section-subtitle { color: rgba(255,255,255,0.6); margin: 0 auto; }
+
+.path-steps {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.path-line {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  bottom: 40px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--sage), var(--terracotta-light));
+  opacity: 0.3;
+}
+
+.path-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+.step-number.s1 { background: rgba(122,158,126,0.2); color: var(--sage-light); }
+.step-number.s2 { background: rgba(196,112,75,0.2); color: var(--terracotta-light); }
+.step-number.s3 { background: rgba(232,223,240,0.2); color: var(--lavender); }
+.step-number.s4 { background: rgba(122,158,126,0.3); color: var(--sage-light); }
+
+.step-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+.step-content p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.6);
+  font-weight: 300;
+  max-width: 500px;
+}
+
+/* ── SATURDAY SESSIONS ── */
+.sessions { background: var(--warm-white); }
+.sessions-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.session-card-stack {
+  position: relative;
+  height: 420px;
+}
+.session-card-item {
+  position: absolute;
+  width: 320px;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+.session-card-item:nth-child(1) {
+  background: white;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  transform: rotate(-3deg);
+}
+.session-card-item:nth-child(2) {
+  background: var(--sage);
+  color: white;
+  top: 60px;
+  left: 120px;
+  z-index: 2;
+  transform: rotate(2deg);
+}
+.session-card-item:nth-child(3) {
+  background: var(--peach);
+  top: 140px;
+  left: 40px;
+  z-index: 1;
+  transform: rotate(-1deg);
+}
+.session-card-item h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.session-card-item p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  font-weight: 300;
+}
+.session-emoji { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
+
+.session-details h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+.session-info {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+.session-info li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+}
+.session-info-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(122,158,126,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials { background: var(--cream); }
+.testimonials-header {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+.testimonials-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.testimonial-card {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.testimonial-card .quote-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  color: var(--sage-light);
+  line-height: 1;
+  opacity: 0.4;
+}
+.testimonial-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-light);
+  font-style: italic;
+  margin: 0.5rem 0 1.5rem;
+  font-weight: 300;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: white;
+}
+.author-avatar.a1 { background: var(--sage); }
+.author-avatar.a2 { background: var(--terracotta); }
+.author-avatar.a3 { background: var(--soft-brown); }
+
+.author-info strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--navy);
+}
+.author-info span {
+  font-size: 0.78rem;
+  color: var(--text-light);
+}
+.stars {
+  color: #F0B429;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-top: 1rem;
+}
+
+/* ── CTA ── */
+.cta-section {
+  background: linear-gradient(135deg, var(--sage), var(--sage-dark));
+  text-align: center;
+  padding: 6rem 4%;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1), transparent 50%);
+}
+.cta-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: white;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.cta-section p {
+  color: rgba(255,255,255,0.8);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  position: relative;
+}
+.cta-section .btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  background: white;
+  color: var(--sage-dark);
+  border: none;
+  border-radius: 50px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+.cta-section .btn-cta:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.5);
+  padding: 3rem 4%;
+  text-align: center;
+}
+footer .logo {
+  color: white;
+  font-size: 1.3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+footer .logo span { color: var(--terracotta-light); }
+footer p { font-size: 0.85rem; line-height: 1.8; }
+footer .footer-links {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+footer .footer-links a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s;
+}
+footer .footer-links a:hover { color: var(--sage-light); }
+
+/* ── ANIMATIONS ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero-content { grid-template-columns: 1fr; text-align: center; }
+  .hero-text .subtitle { margin: 0 auto 2rem; }
+  .hero-text .cta-group { justify-content: center; }
+  .trust-badges { justify-content: center; }
+  .hero-visual { display: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .sessions-container { grid-template-columns: 1fr; }
+  .session-card-stack { display: none; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .path-step { gap: 1.5rem; }
+  .step-number { width: 60px; height: 60px; font-size: 1.3rem; }
+  .path-line { left: 30px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="logo">Munishi Didi<span>.</span></a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#path">Approach</a>
+    <a href="#sessions">Saturday Sessions</a>
+    <a href="#contact" class="btn-primary">Book a Session</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+  <div class="shape shape-3"></div>
+  <div class="shape shape-4"></div>
+
+  <div class="hero-content">
+    <div class="hero-text fade-up">
+      <div class="didi-badge">Munishi Didi</div>
+      <h1>Every Child Deserves a <em>Voice</em> That Shines</h1>
+      <p class="subtitle">
+        Meet Maneesha Munish, CCC-SLP — the caring "Didi" (big sister) who's spent years transforming young lives across California school districts. Now offering private Saturday sessions so your child can find their confident voice.
+      </p>
+      <div class="cta-group">
+        <a href="#sessions" class="btn-primary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Book Saturday Session
+        </a>
+        <a href="#about" class="btn-secondary">Learn More</a>
+      </div>
+      <div class="trust-badges">
+        <div class="trust-badge">
+          <svg width="18" height="18" fill="var(--sage)" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          ASHA Certified
+        </div>
+        <div class="trust-badge">
+          <svg width="18" height="18" fill="var(--sage)" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          CA Licensed
+        </div>
+        <div class="trust-badge">
+          <svg width="18" height="18" fill="var(--sage)" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          School District Trusted
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual fade-up" style="animation-delay: 0.2s">
+      <div class="hero-card">
+        <div class="hero-card-content">
+          <h3>Munishi Didi</h3>
+          <p>Maneesha Munish, CCC-SLP · Your child's caring guide</p>
+        </div>
+      </div>
+
+      <div class="floating-badge floating-badge-1">
+        <div class="badge-label">Availability</div>
+        <div class="badge-value">Saturdays</div>
+      </div>
+      <div class="floating-badge floating-badge-2">
+        <div class="badge-label">Experience</div>
+        <div class="badge-value terracotta">10+ Years</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-image fade-up">
+      <div class="about-image-main">
+        <img src="maneesh.jpg" alt="Maneesha Munish, Speech-Language Pathologist" style="width:100%; height:100%; object-fit:cover; object-position: center top;" />
+      </div>
+      <div class="about-image-accent">
+        <div class="accent-number">500+</div>
+        <div class="accent-label">Children<br>Helped</div>
+      </div>
+    </div>
+
+    <div class="about-text fade-up">
+      <div class="section-label">About Maneesha</div>
+      <h2 class="section-title">Dedicated to Unlocking Every Child's Potential</h2>
+      <p class="section-subtitle">
+        With years of hands-on experience working across California school districts, Maneesha Munish brings compassion, expertise, and proven results to every session. Her deep understanding of childhood speech and language development means your child gets care that truly makes a difference.
+      </p>
+      <ul class="highlight-list">
+        <li>
+          <div class="highlight-icon">
+            <svg width="18" height="18" fill="var(--sage)" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <span><strong>ASHA-Certified</strong> Speech-Language Pathologist (CCC-SLP) with extensive clinical training and credentials</span>
+        </li>
+        <li>
+          <div class="highlight-icon">
+            <svg width="18" height="18" fill="var(--sage)" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <span><strong>California School Districts</strong> — trusted by educators and families for evidence-based speech therapy programs</span>
+        </li>
+        <li>
+          <div class="highlight-icon">
+            <svg width="18" height="18" fill="var(--sage)" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <span><strong>Compassionate & Personalized</strong> — every therapy plan is tailored to your child's unique needs and learning style</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header fade-up">
+    <div class="section-label">Services</div>
+    <h2 class="section-title">Comprehensive Speech & Language Support</h2>
+    <p class="section-subtitle">Evidence-based therapy tailored to your child's unique needs, delivered with warmth and expertise.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="service-icon sage">
+        <svg width="28" height="28" fill="var(--sage)" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+      </div>
+      <h3>Articulation Therapy</h3>
+      <p>Helping children produce clear, accurate speech sounds. From lisps to difficult consonant clusters, we work on precise sound production through engaging, play-based exercises.</p>
+      <div class="service-tags">
+        <span class="service-tag sage">Sound Production</span>
+        <span class="service-tag sage">Clarity</span>
+      </div>
+    </div>
+
+    <div class="service-card fade-up" style="animation-delay: 0.1s">
+      <div class="service-icon terra">
+        <svg width="28" height="28" fill="var(--terracotta)" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+      </div>
+      <h3>Language Development</h3>
+      <p>Building vocabulary, grammar, comprehension, and expression skills. We strengthen the building blocks that help children understand and use language effectively.</p>
+      <div class="service-tags">
+        <span class="service-tag terra">Vocabulary</span>
+        <span class="service-tag terra">Comprehension</span>
+      </div>
+    </div>
+
+    <div class="service-card fade-up" style="animation-delay: 0.2s">
+      <div class="service-icon lav">
+        <svg width="28" height="28" fill="#7B68A8" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+      </div>
+      <h3>Social Communication</h3>
+      <p>Developing pragmatic language skills — understanding social cues, taking turns in conversation, making friends, and navigating social situations with confidence.</p>
+      <div class="service-tags">
+        <span class="service-tag lav">Pragmatics</span>
+        <span class="service-tag lav">Social Skills</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATH TO SUCCESS -->
+<section class="path" id="path">
+  <div class="path-header fade-up">
+    <div class="section-label">Your Journey</div>
+    <h2 class="section-title">The Path to Confident Communication</h2>
+    <p class="section-subtitle">A clear, supportive roadmap from first conversation to lasting progress.</p>
+  </div>
+
+  <div class="path-steps">
+    <div class="path-line"></div>
+
+    <div class="path-step fade-up">
+      <div class="step-number s1">01</div>
+      <div class="step-content">
+        <h3>Free Discovery Call</h3>
+        <p>We start with a complimentary 15-minute phone call. Share your concerns, ask questions, and learn how speech therapy can help your child. No pressure — just clarity.</p>
+      </div>
+    </div>
+
+    <div class="path-step fade-up">
+      <div class="step-number s2">02</div>
+      <div class="step-content">
+        <h3>Comprehensive Evaluation</h3>
+        <p>A thorough assessment of your child's speech, language, and communication abilities. We identify strengths, pinpoint challenges, and build a clear picture of where they are.</p>
+      </div>
+    </div>
+
+    <div class="path-step fade-up">
+      <div class="step-number s3">03</div>
+      <div class="step-content">
+        <h3>Personalized Therapy Plan</h3>
+        <p>Based on the evaluation, we create a tailored plan with specific goals, timelines, and home practice strategies. You'll know exactly what we're working toward and why.</p>
+      </div>
+    </div>
+
+    <div class="path-step fade-up">
+      <div class="step-number s4">04</div>
+      <div class="step-content">
+        <h3>Progress & Celebration</h3>
+        <p>Regular progress updates, parent coaching, and adjusted goals as your child grows. We celebrate every milestone — because every step forward matters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SATURDAY SESSIONS -->
+<section class="sessions" id="sessions">
+  <div class="sessions-container">
+    <div class="session-card-stack fade-up">
+      <div class="session-card-item">
+        <span class="session-emoji">🗣️</span>
+        <h4>1-on-1 Sessions</h4>
+        <p>Focused, individualized attention tailored to your child's specific needs and goals.</p>
+      </div>
+      <div class="session-card-item">
+        <span class="session-emoji">🎯</span>
+        <h4>Goal-Driven</h4>
+        <p>Every session builds toward measurable milestones with clear progress tracking.</p>
+      </div>
+      <div class="session-card-item">
+        <span class="session-emoji">🌟</span>
+        <h4>Fun & Engaging</h4>
+        <p>Play-based therapy that keeps kids motivated while building real skills.</p>
+      </div>
+    </div>
+
+    <div class="session-details fade-up">
+      <div class="section-label">Now Enrolling</div>
+      <h3>Saturday Sessions — Half Day</h3>
+      <p class="section-subtitle">
+        Convenient weekend sessions designed for busy families. Morning slots available so your child gets expert therapy without missing a beat during the school week.
+      </p>
+      <ul class="session-info">
+        <li>
+          <div class="session-info-icon">
+            <svg width="20" height="20" fill="var(--sage)" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <span><strong>When:</strong> Saturdays, Morning Sessions (8 AM – 12 PM)</span>
+        </li>
+        <li>
+          <div class="session-info-icon">
+            <svg width="20" height="20" fill="var(--sage)" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <span><strong>Duration:</strong> 30 or 60-minute sessions available</span>
+        </li>
+        <li>
+          <div class="session-info-icon">
+            <svg width="20" height="20" fill="var(--sage)" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <span><strong>Location:</strong> California (In-Person & Teletherapy)</span>
+        </li>
+        <li>
+          <div class="session-info-icon">
+            <svg width="20" height="20" fill="var(--sage)" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
+          <span><strong>First Step:</strong> Free 15-minute discovery call</span>
+        </li>
+      </ul>
+      <a href="#contact" class="btn-primary">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        Schedule Your Free Call
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-header fade-up">
+    <div class="section-label">Parent Stories</div>
+    <h2 class="section-title">Families Love Working with Maneesha</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card fade-up">
+      <div class="quote-mark">"</div>
+      <p>My son went from barely speaking in sentences to confidently raising his hand in class. Maneesha has a gift for connecting with kids and making therapy feel like play.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar a1">SP</div>
+        <div class="author-info">
+          <strong>Sarah P.</strong>
+          <span>Parent of a 6-year-old</span>
+        </div>
+      </div>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="testimonial-card fade-up" style="animation-delay: 0.1s">
+      <div class="quote-mark">"</div>
+      <p>After just a few months of Saturday sessions, the improvement in my daughter's articulation was remarkable. The personalized approach made all the difference for our family.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar a2">MR</div>
+        <div class="author-info">
+          <strong>Maria R.</strong>
+          <span>Parent of a 4-year-old</span>
+        </div>
+      </div>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="testimonial-card fade-up" style="animation-delay: 0.2s">
+      <div class="quote-mark">"</div>
+      <p>Maneesha doesn't just work with children — she empowers parents too. The home exercises and progress tracking gave us tools to support our son every single day.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar a3">JK</div>
+        <div class="author-info">
+          <strong>James K.</strong>
+          <span>Parent of a 7-year-old</span>
+        </div>
+      </div>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <h2>Ready to Help Your Child <em>Thrive</em>?</h2>
+  <p>Let Munishi Didi guide your child's journey. Book a free discovery call — Saturday sessions filling up fast.</p>
+  <a href="/cdn-cgi/l/email-protection#701d111e1515031830030015151318041815021100095e131f1d" class="btn-cta">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+    Get in Touch
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="logo">Munishi Didi<span> ·</span> Maneesha Munish, CCC-SLP</a>
+  <p>Your child's caring "Didi" — Certified Speech-Language Pathologist · California Licensed<br>Helping children find their voice — one session at a time.</p>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#sessions">Saturday Sessions</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <p style="margin-top: 2rem; font-size: 0.75rem;">© 2026 Maneesha Munish Speech Therapy. All rights reserved.</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.qu
